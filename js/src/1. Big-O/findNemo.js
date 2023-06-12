@@ -1,4 +1,5 @@
 const nemo = ["memo"];
+const largeArray = new Array(100).fill('nemo');
 
 const findNemo = (array) => {
   let t0 = performance.now();
@@ -13,4 +14,4 @@ const findNemo = (array) => {
   console.log('Time == ' + (t1 - t0) + ' ms');
 };
 
-findNemo(nemo);
+findNemo(largeArray);
