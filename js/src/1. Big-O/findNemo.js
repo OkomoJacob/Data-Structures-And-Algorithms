@@ -14,4 +14,4 @@ const findNemo = (array) => {
   console.log('Time == ' + (t1 - t0) + ' ms');
 };
 
-findNemo(largeArray);
+findNemo(largeArray); // O(n)
