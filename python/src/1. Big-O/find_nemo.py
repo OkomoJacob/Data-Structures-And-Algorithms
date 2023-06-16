@@ -11,9 +11,9 @@ def find_nemo(array):
             print("Found NEMO")
         else:
             print("Nemo not Found!")
-            
+
     t1 = time.time()
-    print('Time taken ==', (t1-t0), 'Ms')
-    
-find_nemo(large_array)    
-            
+    print("Time taken ==", (t1 - t0), "Ms")
+
+
+find_nemo(large_array)  # O(n)
