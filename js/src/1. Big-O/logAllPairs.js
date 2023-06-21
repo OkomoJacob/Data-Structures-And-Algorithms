@@ -10,7 +10,7 @@ const logAllPairs = (array) => { // O(n^): Horrible
 };
 
 // ES5
-function logAllPairsOfArrays(array) { // O(n^): Horrible
+function logAllPairsOfArrays(array) { // O(n^2): Horrible
   array.forEach(function (firstBox) {
     array.forEach(function (secondBox) {
       console.log(firstBox, secondBox);
