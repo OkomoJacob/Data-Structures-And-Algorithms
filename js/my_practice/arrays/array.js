@@ -41,8 +41,33 @@ numbers.reduce((previously, item, index, array) => {
   return previously + item;
 });
 
-const sumReduce = numbers.some((previously, item, index, array) => {
-  return item;
+numbers.some((previously, item, index, array) => {
+  return item < 10;
 });
 
-console.log(sumReduce);
+checkEvery = numbers.every((item, index, array) => {
+  return item < 4;
+});
+
+const findItem = numbers.find((item, index, array) => {
+  return item > 2;
+});
+
+// console.log(findItem);
+
+// Spread & Rest Operators
+let newArr = [1, 2, 3, 4, 5, 6];
+let newArr2 = [7, 8, 9, 10];
+
+const combinedArr12 = [];
+const combineArrays = (newArr, newArr2) => {
+  for (let i = 0; i < newArr.length; i++) {
+    combinedArr12.push(newArr[i]);
+  }
+  for (let j = 0; j < newArr2.length; j++) {
+    combinedArr12.push(newArr2[j]);
+  }
+  console.log(combinedArr12);
+};
+
+combineArrays(newArr, newArr2);
