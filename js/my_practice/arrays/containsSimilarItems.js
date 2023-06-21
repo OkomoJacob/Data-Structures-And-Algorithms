@@ -32,8 +32,19 @@ const containsSimilarItem = (array1, array2) => {
   return false;
 };
 
-console.log(containsSimilarItem(array1, array2));
+console.log("Traditional for loop: ", containsSimilarItem(array1, array2));
 
+const containsSimilarItemUsingSome = (array1, array2) => {
+  return array1.some((item1) => {
+    return array2.some((item2) => {
+      if (item1 === item2) {
+        return true;
+      }
+    });
+  });
+};
+
+console.log("Array.prototype.some(): ", containsSimilarItemUsingSome(array1, array2));
 /*
 2nd Approach: Using Hash tables (Objects): Which will give O(a*b) || O(n^2) time complexity.
     - Loop through each item in array1 and create object where properties === items in the array.
