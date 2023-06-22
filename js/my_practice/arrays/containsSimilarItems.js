@@ -19,7 +19,7 @@ Example:
     - Return
 */
 const array1 = ["a", "b", "y", "x"];
-const array2 = ["z", "x", "m"];
+const array2 = ["z", "f", "m"];
 
 const containsSimilarItem = (array1, array2) => {
   for (let i = 0; i < array1.length; i++) {
@@ -44,7 +44,19 @@ const containsSimilarItemUsingSome = (array1, array2) => {
   });
 };
 
-console.log("Array.prototype.some(): ", containsSimilarItemUsingSome(array1, array2));
+console.log(
+  "Array.prototype.some(): ",
+  containsSimilarItemUsingSome(array1, array2)
+);
+
+const containsSimilarItemUsingSimplerSome = (array1, array2) => {
+  return array1.some(item => array2.includes(item));
+};
+
+console.log(
+  "Simpler array.some(): ",
+  containsSimilarItemUsingSimplerSome(array1, array2)
+);
 /*
 2nd Approach: Using Hash tables (Objects): Which will give O(a*b) || O(n^2) time complexity.
     - Loop through each item in array1 and create object where properties === items in the array.
@@ -63,3 +75,26 @@ console.log("Array.prototype.some(): ", containsSimilarItemUsingSome(array1, arr
 */
 const arr1 = ["a", "b", "y", "x"];
 const arr2 = ["z", "x", "m"];
+
+const containsSimilarItemUsingHashTable = (arr1, arr2) => {
+  let map = {};
+
+  // Loop through each item in array1 and create object where properties === items in the array.
+  for (let i = 0; i < arr1.length; i++) {
+    if (!map[arr1[i]]) {
+      // if item in the first array doesn't exist, create it and map it to true.
+      const item = arr1[i];
+      map[item] = true;
+    }
+  }
+
+  // Loop through each item in array2 and check if item in the second array exist in the created object1.
+  for (let j = 0; j < arr2.length; j++) {
+    if (map[arr2[j]]) {
+      return true;
+    }
+  }
+  return false;
+};
+
+console.log("Hash table: ", containsSimilarItemUsingHashTable(arr1, arr2));
