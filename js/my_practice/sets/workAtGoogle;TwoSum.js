@@ -23,7 +23,7 @@ const hasPairsWithSum = (arr, sum) => {
 };
 
 /*
-Solution 1: Brute Force
+Solution 2: Using sets Data Structure
     - 
 */
 
