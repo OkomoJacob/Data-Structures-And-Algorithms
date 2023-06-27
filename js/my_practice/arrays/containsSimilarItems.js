@@ -58,7 +58,7 @@ console.log(
   containsSimilarItemUsingSimplerSome(array1, array2)
 );
 /*
-2nd Approach: Using Hash tables (Objects): Which will give O(a*b) || O(n^2) time complexity.
+2nd Approach: Using Hash tables (Objects): Which will give O(a + b) || O(n) time complexity.
     - Loop through each item in array1 and create object where properties === items in the array.
     
     Example:
