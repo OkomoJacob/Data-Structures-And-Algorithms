@@ -70,4 +70,9 @@ const combineArrays = (newArr, newArr2) => {
   console.log(combinedArr12);
 };
 
-combineArrays(newArr, newArr2);
+// combineArrays(newArr, newArr2);
+
+// Array methods: (2) - Concat
+
+const newArr3 = newArr.concat(newArr2, arr);
+console.log(newArr3);
