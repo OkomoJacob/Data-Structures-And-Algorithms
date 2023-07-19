@@ -1,5 +1,5 @@
 class MapObject {
-  constructor(latitude, longitude) {
+  constructor(latitude, longitude) { //define a set of default values of @ property
     this.lat = latitude;
     this.long = longitude;
   }
