@@ -13,8 +13,12 @@ arr.push("orange");
 arr.pop();
 
 // Add person to the begining of the array and remove it.
-arr.unshift(person);
+arr.unshift(person); // O(n) Since the operation loops throughout the arraya nd re-assigns new index to each.
 arr.shift();
+
+// Add items between the array using .splice()
+arr.splice(2, 1, 'developer') // O(n/2) Since we are looping through half of the elements of the array.
+console.log(arr);
 
 // Loops
 for (let i = 0; i < arr.length; i++) {
@@ -67,7 +71,7 @@ const combineArrays = (newArr, newArr2) => {
   for (let j = 0; j < newArr2.length; j++) {
     combinedArr12.push(newArr2[j]);
   }
-  console.log(combinedArr12);
+  // console.log(combinedArr12);
 };
 
 // combineArrays(newArr, newArr2);
