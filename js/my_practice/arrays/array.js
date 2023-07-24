@@ -96,4 +96,8 @@ let flattenedArr = flatExample.flat(3)
 console.log("Original: " + flattenedArr); // [1, 2, 3, 4,5, 6]
 
 // .reverse(): Reverses the order of the elements in the array.
-console.log("Reversed: " + flattenedArr.reverse());
+// console.log("Reversed: " + flattenedArr.reverse());
+
+// .sort(): Sort the elements based on the value of the difference off the two adjucent elements.
+const unsortedArr = [12, 98, 6, 2, 78, 13, 2,]
+console.log(unsortedArr.sort((a, b) => a-b));
