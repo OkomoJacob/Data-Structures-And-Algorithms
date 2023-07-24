@@ -14,3 +14,12 @@
     
 - These loop methods offer different ways to iterate over arrays and objects, providing flexibility and convenience in handling data. 
 - Each method has its specific purpose, and you can choose the one that suits your needs based on what you want to accomplish in your code.
+1.  `array.conact(array2)`: Concatenates (joins together in a series/chain). Combines two or more arrays. This method returns a new array without modifying any existing arrays. e.g
+
+```
+    arr1 = [1, 2, 3, 4, 5]
+    arr2 = [7, 8, 9, 10, 12]
+    arr1ConcatArr2 = arr1.concat(arr2)
+    
+    Result: [1, 2, 3, 4, 5, 7, 8, 9, 10,12]
+```
