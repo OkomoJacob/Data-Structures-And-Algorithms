@@ -14,14 +14,31 @@ Edge case: Duplicating elements at arr[0, 1, 2].
 E.g [5, 5, 4, 2]: Output will be 5, which is fals.
 */
 
-const arr = [13, 45, '6', 12, 2, 16];
+const arr = [13, 45, "6", 12, 2, 16];
 const dupArr = [13, 12, 13];
 const sortNums = (num1, num2) => {
   return num2 - num1;
 };
 
 sortArr = dupArr.sort(sortNums);
-console.log(sortArr[1]);
+// console.log(sortArr[1]);
 
 /*Optimized solution: 
 Use Sets, which returns a non-duplicating array elemts. */
+const arrWithDuplicates = [13, 45, 45, 34, 8, "35", 12, 12, 2, 16];
+
+const secondLargest = (arr) => {
+  const uniqueArr = Array.from(new Set(arr));
+
+  const uniquelySorted = uniqueArr.sort((a, b) => {
+    return b - a;
+  });
+
+  if (uniquelySorted.length >= 2) {
+    return uniquelySorted[1];
+  } else {
+    return "Provided array is too short";
+  }
+};
+
+console.log("Second largest element:", secondLargest(arrWithDuplicates));
