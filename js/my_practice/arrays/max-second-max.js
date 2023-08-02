@@ -40,27 +40,32 @@ const secondLargest = (arr) => {
 // console.log("Second largest element:", secondLargest(arrWithDuplicates));
 
 /*
-Optimized Approach:
-Using our custm JS functions
+Optimized Approach: O(n)
+- We initialize both largest and secondLargest to -Infinity. 
+- We then iterate through the array and update these variables accordingly. 
+- This logic ensures that we handle the cases where the current element is greater than the largest and also distinct from it. 
+- If it is greater than secondLargest and distinct from largest, we update secondLargest.
+
+Time complexity: O(N).
 */
 
-const arr = [13, 45, 45, 34, 8, "35", 12, 12, 2, 16];
+const arr = [13, 45, 44, 45, 34, 8, "35", 12, 12, 2, 16];
 const secondLargestOptimized = (arr) => {
-  let largest = arr[0];
-  let secondLargest = null;
+  let largest = Number.NEGATIVE_INFINITY;
+  let secondLargest = Number.NEGATIVE_INFINITY;
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] !== largest) {
-      if (secondLargest === null || arr[i] > secondLargest) {
-        if (arr[i] > largest) {
-          secondLargest = largest;
-          largest = arr[i];
-        } else {
-          secondLargest = arr[i];
-        }
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > largest) {
+      secondLargest = largest;
+      largest = arr[i];
+    } else if (arr[i] !== largest && arr[i] > secondLargest) {
+      secondLargest = arr[i];
     }
   }
+  if (secondLargest === -Infinity) {
+    return null;
+  }
+  
   return secondLargest;
 };
 
