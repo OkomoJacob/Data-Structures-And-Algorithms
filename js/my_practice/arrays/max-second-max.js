@@ -46,7 +46,7 @@ Optimized Approach: O(n)
 - This logic ensures that we handle the cases where the current element is greater than the largest and also distinct from it. 
 - If it is greater than secondLargest and distinct from largest, we update secondLargest.
 
-Time complexity: O(N).
+Time complexity: O(N), space complexity: O(1)
 */
 
 const arr = [13, 45, 44, 45, 34, 8, "35", 12, 12, 2, 16];
