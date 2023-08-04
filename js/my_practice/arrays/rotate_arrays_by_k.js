@@ -31,11 +31,32 @@ const rotateArray = (nums, k) => {
 
   const rotated = nums.splice(arrSize - k, arrSize);
   nums.unshift(...rotated);
+
+  return nums;
+};
+
+// console.log("Rotated array:", rotateArray([1, 2, 3, 4, 5, 6, 7], 4));
+
+const rotateArrayOptimized = (nums, k) => {
+  let arrSize = nums.length;
+
+  if (k > arrSize) {
+    k = k % arrSize;
+  }
+  
+  reverse(nums, 0, nums.length - 1); // O(n)
+  reverse(nums, 0, k - 1); // O(k)
+  reverse(nums, k, nums.length - 1);
   
   return nums;
 };
 
-console.log("Rotated array:", rotateArray([1, 2, 3, 4, 5, 6, 7], 4));
-
-const rotateArrayOptimized = (nums, k) => {
+function reverse(nums, left, right) {
+  while (left < right) {
+    const temporaryNum = nums[left];
+    nums[left++] = nums[right];
+    nums[right--] = temporaryNum;
+  }
 }
+
+console.log("Rotated array:", rotateArrayOptimized([1, 2, 3, 4, 5, 6, 7], 4));
