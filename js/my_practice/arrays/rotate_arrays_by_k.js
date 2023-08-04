@@ -36,3 +36,6 @@ const rotateArray = (nums, k) => {
 };
 
 console.log("Rotated array:", rotateArray([1, 2, 3, 4, 5, 6, 7], 4));
+
+const rotateArrayOptimized = (nums, k) => {
+}
