@@ -29,5 +29,10 @@ const rotateArray = (nums, k) => {
     k = k % arrSize;
   }
 
-  const rotatedArray = nums.splice(arrSize - k, size);
+  const rotated = nums.splice(arrSize - k, arrSize);
+  nums.unshift(...rotated);
+  
+  return nums;
 };
+
+console.log("Rotated array:", rotateArray([1, 2, 3, 4, 5, 6, 7], 4));
