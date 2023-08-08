@@ -44,3 +44,15 @@ const removeDuplicatesSplice = (nums) => {
 
 // console.log(removeDuplicatesSplice(nums));
 
+const removeDuplicatesIncludes = (nums) => {
+  let uniqueArray = [];
+
+  for (let i of nums) {
+    if (!uniqueArray.includes(i)) {
+      uniqueArray.push(i);
+    }
+  }
+  
+  return uniqueArray
+};
+console.log(removeDuplicatesIncludes(nums));
