@@ -29,7 +29,7 @@ Explanation:
 - It does not matter what you leave beyond the returned k (hence they are underscores).
 */
 
-const nums = [1, 1, 2];
+const nums = [1, 1, 2, 2, 2, 4, 4, 4, 5, 5, 7, 7, 9, 9, 9, 10, 11];
 
 const removeDuplicatesSplice = (nums) => {
   for (let i = 0; i < nums.length - 1; i++) {
@@ -52,7 +52,24 @@ const removeDuplicatesIncludes = (nums) => {
       uniqueArray.push(i);
     }
   }
-  
-  return uniqueArray
+
+  return uniqueArray;
 };
-console.log(removeDuplicatesIncludes(nums));
+// console.log(removeDuplicatesIncludes(nums));
+
+// Using 2-Pointer Approach.
+const removeDuplicatesTwoPointer = (nums) => {
+  if (nums.length === 0) return 0;
+  let ref = 0;
+
+  for (let j = 1; j < nums.length; j++) {
+    if (nums[ref] !== nums[j]) {
+      ref++;
+      nums[ref] = nums[j];
+    }
+  }
+  
+  return ref + 1;
+};
+
+console.log(removeDuplicatesTwoPointer(nums));
