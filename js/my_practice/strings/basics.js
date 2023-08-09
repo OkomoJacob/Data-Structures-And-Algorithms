@@ -18,7 +18,13 @@ const newStr = string.concat(" and make some coffee!");
 
 // String.trim(): Removes any proceeding & Trainling whitespaces around the string.
 
-const string2 = "       I'm learning strings    "
-console.log(string2.trim())
+const string2 = "       I'm lexarning strings    "
+string2.trim()
 
 // Searching: 
+string2.indexOf("x");
+
+const string3 = "I'm good at Data Structures & Algorithms in JavaScript"
+// Extracting substring
+console.log(string3.substring(20, 25));
+
