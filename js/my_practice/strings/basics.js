@@ -11,8 +11,7 @@ for (const item of str) {
 
 // Modifying strings: JS Strings are immutable.
 string[3] = "v"; // Cannot do this!
-
-console.log(string.replace("Now", "string"));
+string.replace("Now", "string");
 
 const newStr = string.concat(" and make some coffee!");
 
@@ -25,6 +24,27 @@ string2.trim()
 string2.indexOf("x");
 
 const string3 = "I'm good at Data Structures & Algorithms in JavaScript"
-// Extracting substring
-console.log(string3.substring(20, 25));
 
+// Extracting substring
+string3.substring(20, 25);
+string3.slice(20, 27);
+
+// Convert case
+const strToBeConverted = "This is the string TO BE ConVertEd"
+strToBeConverted.toUpperCase(); // Also: .toUpperCase()
+
+const objToTeConverted = {name: "Jane Doe"}
+console.log(JSON.stringify(objToTeConverted));
+
+// JS ASCII Codes
+console.log(string3);
+console.log(string3.charCodeAt(0));
+console.log(String.fromCharCode(72));
+
+
+// Strings Comparisons
+const stringComp1 = "This is the very first string we'll compare"
+const stringComp2 = "This is the very second string we'll compare"
+
+console.log(stringComp1.localeCompare(stringComp2));
+console.log(stringComp1.includes("is the"))
