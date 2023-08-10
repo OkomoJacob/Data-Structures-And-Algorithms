@@ -48,3 +48,8 @@ const stringComp2 = "This is the very second string we'll compare"
 
 console.log(stringComp1.localeCompare(stringComp2));
 console.log(stringComp1.includes("is the"))
+
+// Splitting & Joining Strings
+arr1ToJoin = ["Join", "these", "words"]
+console.log(stringComp1.split("s"));
+console.log(arr1ToJoin.join(' and '));
