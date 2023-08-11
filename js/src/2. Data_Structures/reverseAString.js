@@ -8,6 +8,8 @@ Output: 'bocaJ si eman yM iH' */
 
 let str = "Hi My name is Jacob";
 
+const reverseStringBuiltIn = (str) => str.split('').reverse().join('');
+
 const reverseStringOptimized = (str) => {
   if (!str || str.length < 2 || typeof str !== "string") {
     return "Please recheck inputs";
