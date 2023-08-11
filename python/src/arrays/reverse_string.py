@@ -26,3 +26,8 @@ class Solution:
             s[left], s[right] = s[right], s[left]
             left += 1
             right -= 1
+
+string = "Hi My name is Jacob";
+
+def reverse_optimized:
+    
