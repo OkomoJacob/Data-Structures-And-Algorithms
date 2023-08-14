@@ -28,7 +28,7 @@ Explanation: The arrays we are merging are [0, 3, 4, 31] and [4, 6, 30].
 The result of the merge is [0, 3, 4, 4, 6, 30, 31].
 */
 
-const nums1 = [0, 3, 4, "l", 31];
+const nums1 = [0, 3, 4,  31];
 const nums2 = [4, 6, 30];
 
 const mergeSortedArraysInbuilt = (nums1, nums2) => {
@@ -41,4 +41,40 @@ const mergeSortedArraysInbuilt = (nums1, nums2) => {
   } else return nums1.concat(nums2).sort((a, b) => a - b);
 };
 
-console.log(mergeSortedArraysInbuilt(nums1, nums2));
+// console.log(mergeSortedArraysInbuilt(nums1, nums2));
+
+////
+
+const mergeSortedArraysOptimized = (nums1, nums2) => {
+  if (!nums1.every(num => typeof num === "number") || !nums2.every(num => typeof num === "number")) {
+    console.log("Can only operate on numerical inputs");
+    return [];
+  }
+
+  const mergedArray = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < nums1.length || j < nums2.length) {
+    const array1Item = nums1[i];
+    const array2Item = nums2[j];
+
+    if (array1Item === undefined) {
+      mergedArray.push(array2Item);
+      j++;
+    } else if (array2Item === undefined) {
+      mergedArray.push(array1Item);
+      i++;
+    } else if (array1Item < array2Item) {
+      mergedArray.push(array1Item);
+      i++;
+    } else {
+      mergedArray.push(array2Item);
+      j++;
+    }
+  }
+
+  return mergedArray;
+};
+
+console.log(mergeSortedArraysOptimized(nums1, nums2));
