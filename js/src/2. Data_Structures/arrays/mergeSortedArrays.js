@@ -36,7 +36,7 @@ const mergeSortedArraysInbuilt = (nums1, nums2) => {
     !nums1.every((num) => typeof num === "number") ||
     !nums2.every((num) => typeof num === "number")
   ) {
-    console.log("Please recheck inputs");
+    console.log("Can only operate on numerical inputs");
     return [];
   } else return nums1.concat(nums2).sort((a, b) => a - b);
 };
