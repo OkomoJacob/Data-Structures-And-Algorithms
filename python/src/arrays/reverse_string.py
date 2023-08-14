@@ -29,5 +29,5 @@ class Solution:
 
 string = "Hi My name is Jacob";
 
-def reverse_optimized:
-    
+# def reverse_optimized:
+#     pass
