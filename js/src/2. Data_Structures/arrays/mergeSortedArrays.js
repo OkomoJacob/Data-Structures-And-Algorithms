@@ -31,7 +31,7 @@ The result of the merge is [0, 3, 4, 4, 6, 30, 31].
 const nums1 = [0, 3, 4, "l", 31];
 const nums2 = [4, 6, 30];
 
-const mergeSortedArrays = (nums1, nums2) => {
+const mergeSortedArraysInbuilt = (nums1, nums2) => {
   if (
     !nums1.every((num) => typeof num === "number") ||
     !nums2.every((num) => typeof num === "number")
@@ -41,4 +41,4 @@ const mergeSortedArrays = (nums1, nums2) => {
   } else return nums1.concat(nums2).sort((a, b) => a - b);
 };
 
-console.log(mergeSortedArrays(nums1, nums2));
+console.log(mergeSortedArraysInbuilt(nums1, nums2));
