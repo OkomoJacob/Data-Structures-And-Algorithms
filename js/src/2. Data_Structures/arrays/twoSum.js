@@ -18,6 +18,11 @@ Output: [0,1]
 */
 
 const twoSum = (nums, target) => {
+  if (!Array.isArray(nums) || nums.some((num) => typeof num !== "number")) {
+    console.log("Invalid input: Numbers only.");
+    return [];
+  }
+  
   let arrLength = nums.length;
 
   for (let i = 0; i < arrLength; i++) {
@@ -30,4 +35,4 @@ const twoSum = (nums, target) => {
   return [];
 };
 
-console.log(twoSum([2,5,5,11], 10));
+console.log(twoSum([2, 5, 5, 11, "13"], 10)); // Output: [1, 2]
